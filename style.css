@@ -1,22 +1,18 @@
-*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,Apple SD Gothic Neo,Noto Sans KR,sans-serif;background:#0b0d10;color:#eef1f6}
-.wrap{max-width:640px;margin:0 auto;padding:24px}
-.header{margin:8px 0 16px}
-h1{font-size:28px;margin:0 0 8px}
-.sub{margin:0;color:#a6b0c3}
-.card{background:#131722;border:1px solid #1d2330;border-radius:16px;padding:16px;margin-top:16px;box-shadow:0 8px 20px #0004}
-.acct{background:#0f1320;border-radius:12px;padding:12px;margin-bottom:16px;border:1px solid #1a2030}
-.row{display:flex;align-items:center;gap:8px;padding:8px 6px;border-bottom:1px dashed #202738}
+/* Minimal, high-contrast, no decorations */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,Apple SD Gothic Neo,Noto Sans KR,sans-serif;background:#ffffff;color:#111}
+.container{max-width:560px;margin:0 auto;padding:24px}
+.title{font-size:24px;margin:8px 0 20px 0;font-weight:700}
+.account{border:1px solid #ddd;border-radius:10px;padding:12px}
+.row{display:flex;align-items:center;gap:10px;padding:10px 6px;border-bottom:1px solid #eee}
 .row:last-child{border-bottom:none}
-.label{width:84px;color:#93a0b6}
-.val{flex:1}
-.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
-.btns{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
-.btn{display:inline-flex;justify-content:center;align-items:center;height:52px;border-radius:12px;border:1px solid #2a3447;text-decoration:none;color:#eef1f6;font-weight:600}
+.k{width:64px;color:#444}
+.v{flex:1}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;letter-spacing:0.2px}
+.copy{height:32px;padding:0 10px;border:1px solid #bbb;border-radius:6px;background:#f8f8f8}
+.copy:active{transform:translateY(1px)}
+.actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:18px}
+.btn{display:inline-flex;justify-content:center;align-items:center;height:52px;border-radius:10px;border:1px solid #111;text-decoration:none;color:#fff;background:#111;font-weight:700}
 .btn:active{transform:translateY(1px)}
-.btn.ghost{height:32px;padding:0 10px;border-radius:8px;font-weight:500}
-.btn.toss{background:#1e90ff20;border-color:#1e90ff66}
-.btn.kakao{background:#f7e31720;border-color:#f7e31766}
-.hint{color:#8e9bb0;margin:10px 2px 0;font-size:14px}
-.footer{margin-top:16px;color:#93a0b6}
-.small{font-size:12px;color:#7b879b}
-@media (min-width:520px){.btns{grid-template-columns:1fr 1fr}}
+.btn.kakao{background:#FEE500;color:#111;border-color:#FEE500}
+@media (min-width:520px){.actions{grid-template-columns:1fr 1fr}}

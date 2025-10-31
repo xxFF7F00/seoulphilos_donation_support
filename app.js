@@ -1,34 +1,29 @@
-// Read config and wire up UI / deep links
+// Minimal wiring for config + buttons
 (function(){
   const el = (id)=>document.getElementById(id);
   const { BANK_NAME, ACCOUNT_NO, ACCOUNT_HOLDER, TOSS_LINK, KAKAOPAY_LINK } = window.__DONATION_CONFIG__ || {};
 
-  //계좌정보
+  // Fill account info
   el('bankName').textContent = BANK_NAME || '-';
   el('accountNo').textContent = ACCOUNT_NO || '-';
   el('accountHolder').textContent = ACCOUNT_HOLDER || '-';
 
-  //복사
+  // Copy button
   el('copyBtn').addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(ACCOUNT_NO || '');
       el('copyBtn').textContent = '복사됨';
       setTimeout(()=> el('copyBtn').textContent = '복사', 1200);
-    } catch (e) {
+    } catch {
       alert('복사에 실패했습니다. 계좌번호를 길게 눌러 복사해 주세요.');
     }
   });
 
-  // Link buttons
-  const tk = (e, href) => {
-    if (!href) {
-      e.preventDefault();
-      alert('링크 미설정');
-      return false;
-    }
+  // Buttons
+  const go = (e, href) => {
+    if (!href){ e.preventDefault(); alert('링크가 설정되지 않았습니다.'); return; }
     window.location.href = href;
   };
-
-  el('tossBtn').addEventListener('click', (e)=> tk(e, TOSS_LINK));
-  el('kakaoBtn').addEventListener('click', (e)=> tk(e, KAKAOPAY_LINK));
+  document.getElementById('tossBtn').addEventListener('click', (e)=> go(e, TOSS_LINK));
+  document.getElementById('kakaoBtn').addEventListener('click', (e)=> go(e, KAKAOPAY_LINK));
 })();
