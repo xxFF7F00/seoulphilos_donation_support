@@ -1,4 +1,3 @@
-# 사용법: python3 qr_generate.py "https://your-final-url.example/"
 import sys
 import qrcode
 
