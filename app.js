@@ -15,7 +15,7 @@
       el('copyBtn').textContent = '복사됨';
       setTimeout(()=> el('copyBtn').textContent = '복사', 1200);
     } catch {
-      alert('복사에 실패했습니다. 계좌번호를 길게 눌러 복사해 주세요.');
+      alert('복사에 실패했습니다. 복사 버튼을 다시 눌러주세요.');
     }
   });
 
